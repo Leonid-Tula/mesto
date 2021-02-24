@@ -1,0 +1,22 @@
+.elements {
+    margin: 0;
+    padding-top: 51px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 17px 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .elements {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .elements {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
