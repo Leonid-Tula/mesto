@@ -30,6 +30,7 @@
 
 @media screen and (max-width: 767px) {
     .popup__description-field {
-        padding: 30px 0 13px;
+        /*padding: 14px 0 0; Расстояние между нижними кромками полей в форме 57px - line-height = 14px*/
+        margin-top: 14px;
     }
 }

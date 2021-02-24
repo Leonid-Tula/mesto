@@ -30,6 +30,7 @@
 
 @media screen and (max-width: 767px) {
     .popup__name-field {
-        padding: 75px 0 13px;
+       /* padding: 59px 0 0;  Расстояние между нижними кромками поля и заголовка в форме 102px - line-height = 59px*/
+        margin-top: 59px;
     } 
 }
