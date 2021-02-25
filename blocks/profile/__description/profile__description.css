@@ -5,13 +5,23 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
+    text-overflow: ellipsis;
+    /*max-width: calc(100% - 60px);*/
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 703px) {
     .profile__description {
         padding-top: 14px;
         font-size: 14px;
         line-height: 17px;
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .profile__description {
+        padding-left: 0;
     }
 }

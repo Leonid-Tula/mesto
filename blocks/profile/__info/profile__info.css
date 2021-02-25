@@ -2,14 +2,14 @@
     width: 100%;
     padding-left: 30px;
     max-width: calc(100% - 300px);
-    min-width: 282px;
+    min-width: 384px;
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 703px) {
     .profile__info {
-        width: 100%;
         max-width: 320px;
+        min-width: 282px;
         padding: 26px 0;
     }
 }

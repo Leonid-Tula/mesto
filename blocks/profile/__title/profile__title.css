@@ -4,6 +4,10 @@
     font-weight: 500;
     font-size: 42px;
     line-height: 48px;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 60px);
+    overflow: hidden;
+    white-space: nowrap;
     /* or 114% */
     /*position: relative;*/
 }
@@ -30,12 +34,19 @@
     cursor: pointer;
 }*/
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 703px) {
     .profile__title {
         font-size: 27px;
         line-height: 33px;
         text-align: center; 
+        padding-left: 42px;
     }
+
+@media screen and (max-width: 620px){
+    .profile__title{
+        padding-left: 28px;
+    }
+}    
 
     /*.profile__title::after {
         width: 18px;

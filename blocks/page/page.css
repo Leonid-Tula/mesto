@@ -12,4 +12,5 @@
     -moz-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
     padding: 0 19px;
+    min-width: 320px;
 }

@@ -1,7 +1,9 @@
 .elements__like {
     width: 22px;
     height: 19px;
-    
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 .elements__like:hover {

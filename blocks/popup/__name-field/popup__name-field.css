@@ -12,7 +12,7 @@
     margin: 41px 0 0;
 }
 
-.popup__name-field::-webkit-input-placeholder {
+/*.popup__name-field::-webkit-input-placeholder {
     color: #000000;
 }
 
@@ -26,7 +26,7 @@
 
 .popup__name-field::placeholder {
     color: #000000;
-}
+}*/
 
 @media screen and (max-width: 767px) {
     .popup__name-field {
