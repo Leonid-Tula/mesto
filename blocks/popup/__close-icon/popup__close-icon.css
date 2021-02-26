@@ -9,6 +9,8 @@
     cursor: pointer;
     background: transparent;
     border: none;
+    margin: 0;
+    padding: 0;
 }
 
 .popup__close-icon:hover {
