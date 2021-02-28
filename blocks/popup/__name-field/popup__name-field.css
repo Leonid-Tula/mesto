@@ -1,3 +1,5 @@
+
+
 .popup__name-field {
     font-style: normal;
     font-weight: normal;
@@ -9,8 +11,11 @@
     border-bottom: 1px solid rgba(0,0,0,0.2);
     /*padding: 54px 0 13px;*/
     padding: 0;
-    margin: 41px 0 0;
+    margin: 6px 0 0;
+    /*margin: 41px 0 0; отступ поле имени*/ 
+
 }
+
 
 /*.popup__name-field::-webkit-input-placeholder {
     color: #000000;
@@ -30,7 +35,6 @@
 
 @media screen and (max-width: 767px) {
     .popup__name-field {
-       /* padding: 59px 0 0;  Расстояние между нижними кромками поля и заголовка в форме 102px - line-height = 59px*/
-        margin-top: 59px;
+        margin-top: 14px;
     } 
 }

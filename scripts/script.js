@@ -1,8 +1,10 @@
 // Находим форму в DOM
-let formElement = document.querySelector ('.popup');// Воспользуйтесь методом querySelector()
+
+let popup = document.querySelector ('.popup');
+let formElement = popup.querySelector('.popup__profile-form');// Воспользуйтесь методом querySelector()
 // Находим поля формы в DOM
-let nameInput = formElement.querySelector('.popup__name-field');// Воспользуйтесь инструментом .querySelector()
-let jobInput = formElement.querySelector('.popup__name-field_description');// Воспользуйтесь инструментом .querySelector()
+let nameInput = formElement.querySelector('.popup__name-field_input_name');// Воспользуйтесь инструментом .querySelector()
+let jobInput = formElement.querySelector('.popup__name-field_input_description');// Воспользуйтесь инструментом .querySelector()
 let profileName = document.querySelector('.profile__title'); // Имя профиля
 let profileDescription = document.querySelector('.profile__description') // Описание профиля
 //let addButton = document.querySelector ('.profile__add-button');
@@ -24,18 +26,18 @@ function formSubmitHandler (evt) {
     profileName.textContent = nameInput.value;
     profileDescription.textContent = jobInput.value;
     // Вставьте новые значения с помощью textContent
-    formElement.classList.toggle('popup_opened')
+    popup.classList.toggle('popup_opened')
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener ('submit', formSubmitHandler);
 
-function openForm (evt) {
+function openPopup (evt) {
     evt.preventDefault();
     nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;
-    formElement.classList.toggle('popup_opened')
+    popup.classList.add('popup_opened')
 }
 /*addButton.addEventListener ('click', function(){
     formElement.classList.toggle('popup_opened');
@@ -43,12 +45,17 @@ function openForm (evt) {
 });
 */
 
-editButton.addEventListener ('click', openForm)
+editButton.addEventListener ('click', openPopup)
     //{formElement.classList.toggle('popup_opened');
     // console.log ("Нажали на редактирование");}
 ; 
 
-closePopup.addEventListener ('click', openForm) 
+function closePopupFunction (evt) {
+    evt.preventDefault();
+    popup.classList.remove('popup_opened')
+}
+
+closePopup.addEventListener ('click', closePopupFunction) 
     //{formElement.classList.toggle('popup_opened');
     //console.log ("Нажали на крестик");}
 ;

@@ -12,22 +12,7 @@
     </header>
 
     <main class="content">
-        <div class="popup">
-            <div class="popup__container">
-                <button type="button" class="popup__close-icon"><img src="./images/Krestik.svg" alt="Крестик" class="popup__close-icon-image"></button>
-                <form name="form">
-                    <h2 class="popup__title">Редактировать профиль</h2>
-                    <input type="text" name="fullname" value="Жак-Ив Кусто" class="popup__name-field">
-                    <input type="text" name="description" value="Исследователь океана" class="popup__name-field popup__name-field_description">
-                    <!--<p class="popup__description-field">Исследователь океана</p>-->
-                    <!--<input type="submit" class="popup__submit-button">Сохранить>-->
-                    <button class="popup__submit-button" type = "submit">Сохранить</button>
-                    <!--<img src="./images/Krestik.svg" class="popup__close-icon" alt="Крестик">-->
-                </form>
-            </div> 
-             
-        </div>
-
+        
         <section class="profile">
             <img src="./images/Kusto.jpg" class="profile__avatar" alt="Аватар пользователя">
             <div class="profile__info">
@@ -89,6 +74,22 @@
     <footer class="footer">
         <p class="footer__copyrights">&copy; 2020 Mesto Russia</p>
     </footer>
+
+    <div class="popup">
+        <div class="popup__container">
+            <button type="button" class="popup__close-icon"><img src="./images/Krestik.svg" alt="Крестик" class="popup__close-icon-image"></button>
+            <form name="profileForm" class="popup__profile-form">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input type="text" name="fullname" value="Жак-Ив Кусто" class="popup__name-field popup__name-field_input_name">
+                <input type="text" name="description" value="Исследователь океана" class="popup__name-field popup__name-field_input_description">
+                <!--<p class="popup__description-field">Исследователь океана</p>-->
+                <!--<input type="submit" class="popup__submit-button">Сохранить>-->
+                <button class="popup__submit-button" type = "submit">Сохранить</button>
+                <!--<img src="./images/Krestik.svg" class="popup__close-icon" alt="Крестик">-->
+            </form>
+        </div> 
+    </div>
+
     <script src="./scripts/script.js"></script>
 </body>
 </html>
