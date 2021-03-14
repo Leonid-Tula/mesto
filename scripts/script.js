@@ -135,8 +135,8 @@ function addPlaceSubmit (evt) {
     console.log(newPlace);
     console.log("save");
     */
-    inputPlaceTitle.value = 'Название';
-    inputPlaceImageSrc.value = 'Ссылка на картинку';
+    inputPlaceTitle.value = '';
+    inputPlaceImageSrc.value = '';
     
     //formPlace.classList.remove('popup__form_opened');
     popupPlace.classList.remove('popup_opened');
