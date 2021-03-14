@@ -69,10 +69,10 @@ function openPopupImage (evt) {
         newPopup.classList.add('popup_closed');
     });
 
-    picture = document.querySelector('.elements__image_popup_src');
+    picture = document.querySelector('.popup__image_popup_src');
     //console.log(picture);
     picture.src = evt.target.src;
-    caption = document.querySelector('.elements__title_popup_text');
+    caption = document.querySelector('.popup__capture_popup_text');
     //console.log(caption);
     caption.textContent = evt.target.parentElement.querySelector('.elements__title').textContent;
     //console.log(caption);
