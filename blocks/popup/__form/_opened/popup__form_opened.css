@@ -1,0 +1,6 @@
+.popup__form_opened {
+    display: block;
+    opacity: 1;
+    content-visibility: visible;
+    transition: all 1s linear;
+}

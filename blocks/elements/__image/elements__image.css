@@ -1,5 +1,5 @@
 .elements__image {
     width: 100%;
-    /*max-height: calc(100% - 82px);*/
-    object-fit: cover;
+    height: calc(100% - 82px);
+    object-fit: inherit;
 }

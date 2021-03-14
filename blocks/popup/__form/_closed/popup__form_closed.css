@@ -1,0 +1,5 @@
+.popup__form_closed {
+    opacity: 0;
+    content-visibility: hidden;
+    transition: all 1s linear;
+}
