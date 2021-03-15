@@ -16,9 +16,9 @@ const closePopupButtons = document.querySelectorAll ('.popup__close-icon');
 const closePopupButtonsArr = Array.from(closePopupButtons);
 //let placeTitle = formPlace.querySelector('.popup__name-field_input_place-title-name');
 //let placeImageSrc = formPlace.querySelector('.popup__name-field_input_place-image-src');
-let closeButtonPopupImage = document.querySelector('.popup__close-icon_popup_image');
-let picture;
-let caption;
+//let closeButtonPopupImage = document.querySelector('.popup__close-icon_popup_image');
+let picture = document.querySelector('.popup__image_popup_src');
+let caption = document.querySelector('.popup__capture_popup_text');
 
 const initialCards = [
     {
@@ -64,40 +64,36 @@ function addTaskListeners(task){
 function openPopup(popup) {
     popup.classList.add('popup_opened'); //добавляем к popup класс popup_opened
     popup.classList.remove('popup_closed');
-    //console.log('Открыли попап');
+    //console.log('Открыли попап ' + popup.classList);
 }
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened'); //удаляем у popup класс popup_opened
     popup.classList.add('popup_closed');
-    //console.log('Закрыли попап'); 
+    //console.log('Закрыли попап ' + popup.classList); 
 }
 
 function openPopupImage (evt) {
     ////newPopup.classList.add('popup_opened');
     ////newPopup.classList.remove('popup_closed');
     openPopup(newPopup);
-    closeButtonPopupImage = document.querySelector('.popup__close-icon_popup_image');
     ////closeButtonPopupImage.addEventListener('click', function(){
         ////newPopup.classList.remove('popup_opened');
         ////newPopup.classList.add('popup_closed');
     ////});
-
-    picture = document.querySelector('.popup__image_popup_src');
     //console.log(picture);
     picture.src = evt.target.src;
     picture.alt = evt.target.alt;
-    caption = document.querySelector('.popup__capture_popup_text');
     //console.log(caption);
     caption.textContent = evt.target.parentElement.querySelector('.elements__title').textContent;
     //console.log(caption);
 }
 
-closeButtonPopupImage.addEventListener('click', function(){
+/*closeButtonPopupImage.addEventListener('click', function(){
     //console.log('closed');
     closePopup(newPopup);
 });
-
+*/
 
 function createPlaceHtmlElementFromTemplate (item) {
     const newItem = placeContainerTemplate.content.cloneNode(true);
@@ -152,8 +148,6 @@ function addPlaceSubmit (evt) {
     //popupProfile.classList.remove('popup_opened'); 
 }
 
-
-
 // Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
 function handleProfileSubmit (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
@@ -191,14 +185,13 @@ function editPopup (evt) {
     //formElement.classList.remove('popup__form_closed');
 }
 
-function closePopupFunction (evt) {
-    evt.preventDefault();
+////function closePopupFunction (evt) {
+    ////evt.preventDefault();
 
     //popup.classList.remove('popup_opened');
     //popup.classList.add('popup_closed');
     ////popupProfile.classList.remove('popup_opened');
     ////popupProfile.classList.add('popup_closed');
-    closePopup(popupProfile);
     //document.querySelector('popup-image').classList.remove('popup_opened');
     /*formElement.classList.remove('popup__form_opened');
     formElement.classList.add('popup__form_closed');
@@ -210,8 +203,10 @@ function closePopupFunction (evt) {
     */
     ////popupPlace.classList.remove('popup_opened');
     ////popupPlace.classList.add('popup_closed');
-    closePopup(popupPlace);
-}
+    
+    ////closePopup(popupProfile);
+    ////closePopup(popupPlace);
+////}
 
 function deletePlaceElement (evt) {
     evt.target.closest('.elements__element').remove();
@@ -248,9 +243,11 @@ editButton.addEventListener ('click', editPopup)
 ; 
 
 closePopupButtonsArr.map(function(item){
-    item.addEventListener ('click', closePopupFunction);
-    //console.log("Навесили обработчики на кнопку закрытия");
-    return item;
+    ////item.addEventListener ('click', closePopupFunction);
+    const popup = item.closest('.popup');
+    item.addEventListener ('click', () => closePopup(popup));
+    //console.log("Навесили обработчики на кнопку закрытия " + popup.classList);
+    ////return item;
 }) 
     //{formElement.classList.toggle('popup_opened');
     //console.log ("Нажали на крестик");}
