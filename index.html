@@ -48,8 +48,10 @@
             <button type="button" class="popup__close-icon"><img src="./images/Krestik.svg" alt="Крестик" class="popup__close-icon-image"></button>
             <form name="profileForm" class="popup__form popup__form_profile_name">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" name="fullname" value="Жак-Ив Кусто" class="popup__name-field popup__name-field_input_name">
-                <input type="text" name="description" value="Исследователь океана" class="popup__name-field popup__name-field_input_description">
+                <input type="text" id="name-profile" name="fullname" value="Жак-Ив Кусто" class="popup__name-field popup__name-field_input_name" required minlength="2" maxlength="40">
+                <span id="name-profile-error" class="popup__form-error"></span>
+                <input type="text" id="description" name="description" value="Исследователь океана" class="popup__name-field popup__name-field_input_description" required minlength="2" maxlength="200">
+                <span id="description-error" class="popup__form-error"></span>
                 <button class="popup__submit-button" type = "submit">Сохранить</button>
             </form>
         </div> 
@@ -60,8 +62,10 @@
             <button type="button" class="popup__close-icon"><img src="./images/Krestik.svg" alt="Крестик" class="popup__close-icon-image"></button>
             <form name="placeForm" class="popup__form popup__form_place_image">
                 <h2 class="popup__title">Новое место</h2>
-                <input type="text" name="fullname" placeholder="Название" class="popup__name-field  popup__form-place popup__name-field_input_place-title-name">
-                <input type="text" name="description" placeholder="Ссылка на картинку" class="popup__name-field  popup__form-place popup__name-field_input_place-image-src">
+                <input type="text" id="image-title" name="fullname" placeholder="Название" class="popup__name-field  popup__form-place popup__name-field_input_place-title-name" required minlength="2" maxlength="30">
+                <span id="image-title-error" class="popup__form-error"></span>
+                <input type="url" id="image-url" name="description" placeholder="Ссылка на картинку" class="popup__name-field  popup__form-place popup__name-field_input_place-image-src" required>
+                <span id="image-url-error" class="popup__form-error"></span>
                 <button class="popup__submit-button popup__submit-button_form_place" type = "submit">Сохранить</button>
             </form>
         </div> 
@@ -75,6 +79,7 @@
         </div>
     </div>
 
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 </html>

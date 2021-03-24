@@ -4,33 +4,30 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 43px;
+    /*line-height: 43px; размер изменён, чтобы влез текст ошибки валидации*/
+    line-height: 17px;
     color: #000000;
     width: 100%;
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.2);
     /*padding: 54px 0 13px;*/
-    padding: 0;
-    margin: 6px 0 0;
+    padding: 5px 0 13px;
+    margin: 0px 0 0;
     /*margin: 41px 0 0; отступ поле имени*/ 
 
 }
 
-
-/*.popup__name-field::-webkit-input-placeholder {
+/*.popup__name-field:invalid {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 43px;
     color: #000000;
-}
-
-.popup__name-field::-moz-placeholder {
-    color: #000000;
-}
-
-.popup__name-field::-ms-input-placeholder {
-    color: #000000;
-}
-
-.popup__name-field::placeholder {
-    color: #000000;
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 6px 0 0;
+    border-bottom: 1px solid #FF0000;
 }*/
 
 @media screen and (max-width: 767px) {
