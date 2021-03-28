@@ -59,15 +59,15 @@ const closeByOverlayClick =(evt) => {
     const activePopup = document.querySelector('.popup_opened');
     if (evt.target.classList.contains('popup_opened')) {
         closePopup(activePopup);
-        activePopup.removeEventListener('click', closeByOverlayClick);
+        ////activePopup.removeEventListener('click', closeByOverlayClick);
     } 
     };
 
-function addCloseByOverlayClickListener () { 
-    const activePopup = document.querySelector('.popup_opened');
-    activePopup.addEventListener('click', closeByOverlayClick);
+////function addCloseByOverlayClickListener () { 
+    ////const activePopup = document.querySelector('.popup_opened');
+    ////activePopup.addEventListener('click', closeByOverlayClick);
     //return activePopup;
-}
+////}
 
 function addTaskListeners(task){
     const deleteButton = task.querySelector('.elements__trash');
@@ -81,12 +81,15 @@ function addTaskListeners(task){
 function openPopup(popup) {
     popup.classList.add('popup_opened'); //добавляем к popup класс popup_opened
     popup.classList.remove('popup_closed');
+    document.addEventListener('keydown', closePopupByEsc);
+    //document.querySelector('.popup_opened').addEventListener('keydown', newClose);
     //console.log('Открыли попап ' + popup.classList);
 }
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened'); //удаляем у popup класс popup_opened
     popup.classList.add('popup_closed');
+    document.removeEventListener ('keydown', closePopupByEsc);
     //console.log('Закрыли попап ' + popup.classList); 
 }
 
@@ -98,9 +101,9 @@ function openPopupImage (evt) {
     //console.log(caption);
     caption.textContent = evt.target.parentElement.querySelector('.elements__title').textContent;
     //console.log(caption);
-    addCloseByEscListener();
-    addCloseByOverlayClickListener();
-    enablevalidation(validationParameters);
+    ////addCloseByEscListener();
+    ////addCloseByOverlayClickListener();
+    //enablevalidation(validationParameters);
 }
 
 function createPlaceHtmlElementFromTemplate (item) {
@@ -145,6 +148,9 @@ function addPlaceSubmit (evt) {
     inputPlaceTitle.value = '';
     inputPlaceImageSrc.value = '';
     closePopup(popupPlace);
+    const submitButtonInactivated = popupPlace.querySelector(validationParameters.submitButtonSelector);
+    submitButtonInactivated.classList.add(validationParameters.inactiveButtonClass);
+    submitButtonInactivated.setAttribute('disabled', true);
 }
 
 // Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
@@ -161,7 +167,7 @@ function editPopup (evt) {
     nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;
     openPopup(popupProfile);
-    enablevalidation(validationParameters);
+    //enablevalidation(validationParameters);
 }
 
 function deletePlaceElement (evt) {
@@ -179,25 +185,23 @@ function closePopupByEsc (evt) {
     if (evt.keyCode === escKeyCode) {
        const activePopup = document.querySelector('.popup_opened');
         closePopup(activePopup);
-        //console.log ("Нажали на Esc");
-        //console.log('popup ' + activePopup.classList);
+        //console.log("Нажали на Esc " + 'popup ' + activePopup.classList);
     };
-    document.removeEventListener ('keydown', closePopupByEsc);
+    ////document.removeEventListener ('keydown', closePopupByEsc);
 }
 
-function addCloseByEscListener() {
+/*function addCloseByEscListener() {
     document.addEventListener ('keydown', closePopupByEsc);
-}
+}*/
 
 formProfile.addEventListener ('submit', handleProfileSubmit);
 formPlace.addEventListener ('submit', addPlaceSubmit);
 
 addButton.addEventListener ('click', function(){
     openPopup(popupPlace);
-    enablevalidation(validationParameters);  
-    //enablevalidation();
-    addCloseByEscListener();
-    addCloseByOverlayClickListener();
+    //enablevalidation(validationParameters);  
+    ////addCloseByEscListener();
+    ////addCloseByOverlayClickListener();
     //console.log ("Нажали на добавить нового");
 });
 
@@ -205,8 +209,8 @@ editButton.addEventListener ('click', function(){
     editPopup();
     //enablevalidation(validationParameters); 
     //console.log(enablevalidation);
-    addCloseByEscListener();
-    addCloseByOverlayClickListener();
+    ////addCloseByEscListener();
+    ////addCloseByOverlayClickListener();
     //console.log("Навесили обработчики на ESC закрытия ");
     //console.log ("Нажали на редактирование");
 }); 
@@ -216,3 +220,5 @@ closePopupButtonsArr.forEach(function(item){
     item.addEventListener ('click', () => closePopup(popup));
     //console.log("Навесили обработчики на кнопку закрытия " + popup.classList);
 });
+
+Array.from(document.querySelectorAll('.popup')).forEach( () => {addEventListener('click', closeByOverlayClick)});
